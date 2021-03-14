@@ -5,6 +5,11 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
 	// Function variables
 	var password = '';
+	const uppercaseArray = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",];
+	const lowercaseArray = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
+	const numericArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,];
+	const specialArray =  ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", ".",];
+
 
 	declareLength ();
 
@@ -33,18 +38,37 @@ function generatePassword() {
 		const specialChoice = confirm("Would you like to include any special characters in your password?");
 		if (!uppercaseChoice && !lowercaseChoice && !numericChoice && !specialChoice) {
 			alert("Please start again and select at least one password criteria to generate a password.");
-		} else {
-			// call function to generate password
+		} else { concateArrays ();
 		}	
-
 	}
 
+	// Concate chosen criteria arrays into one long array 
+	// This does not work
+	function concateArrays () {
+		const concArray = function () {
+			if (uppercaseChoice) {
+				concArray = concatenatedArray.concat(lowerCaseArray);
+			}
+			console.log (concateArrays)
+		
+			if (lowercaseChoice) {
+				concArray = concatenatedArray.concat(upperCaseArray);
+			}
+		
+			if (numericChoice) {
+				concArray = concatenatedArray.concat(numberArray);
+			}
+		
+			if (specialChoice) {
+				concArray = concatenatedArray.concat(specialCharacterArray);
+			}
+		}
+	}
 
-
-
-
-
-  // sample special characters @%+\\/'!#$^?:,)(}{][~-_.
+	// for (var i = 0; i < lengthChoice; i++) {
+		// let generate = [Math.floor(Math.random() * 62)];
+		// password += generate;
+	//}
 
 	// Return our created password
 	//return password;
