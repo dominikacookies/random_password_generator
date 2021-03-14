@@ -13,10 +13,31 @@ var generateBtn = document.querySelector("#generate");
 
 // Declare a new function on line 3
 function generatePassword() {
-	// Create a variable to store our generated password
-	var password = ''
+	// Function variables
+	var password = '';
 
-	// Logic would go here
+	// Password length declaration by user
+	const lengthChoice = prompt("How long would you like your password to be?");
+	// Can't be shorter than 8  or more than 128
+
+	// Criteria selection by user
+
+	// Uppercase letters
+  const uppercaseChoice = confirm("Would you like to include uppercase letters in your password?");
+
+	// Lowercase letters
+  const lowercaseChoice = confirm("Would you like to include lowercase letters in your password?");
+
+	// Numerics
+  const numericChoice = confirm("Would you like to include numbers in your password?");
+
+	// Special characters
+  const specialChoice = confirm("Would you like to include any special characters in your password?");
+
+	// Has user selected at least one of the above?
+
+
+
   // sample special characters @%+\\/'!#$^?:,)(}{][~-_.
 	...
 
