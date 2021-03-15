@@ -24,9 +24,10 @@ function generatePassword() {
 	// Password length declared by user
 	let lengthChoice = prompt("How long would you like your password to be?");
 
-	// Password length input is validated
+	
 	validateLengthChoice ();
 
+	// Password length input is validated
 	function validateLengthChoice () {
 		// Password cannot be shorter than 8 or more than 128 characters. Th password must be a number.
 		if ( !lengthChoice || isNaN(lengthChoice) ) {
@@ -37,17 +38,17 @@ function generatePassword() {
 		}
 	}
 
+	// Password criteria selection by user
 	function criteriaChoice () {
-		// Password criteria selection by user
 		const uppercaseChoice = confirm("Would you like to include uppercase letters in your password?");
 		const lowercaseChoice = confirm("Would you like to include lowercase letters in your password?");
 		const numericChoice = confirm("Would you like to include numbers in your password?");
 		const specialChoice = confirm("Would you like to include any special characters in your password?");
 		
-		// Password criteria is validated
 		criteriaValidation (uppercaseChoice,lowercaseChoice,numericChoice,specialChoice)
 	}
 
+	// Password criteria is validated
 	function criteriaValidation (uppercaseChoice,lowercaseChoice,numericChoice,specialChoice) {
 		if (!uppercaseChoice && !lowercaseChoice && !numericChoice && !specialChoice) {
 			alert("Please start again and select at least one password criteria to generate a password.");
@@ -104,14 +105,14 @@ function generatePassword() {
 			}
 		}
 
-		// A for loop is used to generate a password from the single array
+		// Remaining password characters are generated from the single array 
 		for (var i = 0; i < lengthChoice; i++) {
 			const randomIndex = Math.floor(Math.random() * concArray.length);
 			passwordArray.push(concArray[randomIndex]);
 		}
 
 		// The passwordArray is translated into a string and declared against variable password
-		password = passwordArray.toString ();
+		password = passwordArray.join("");
 	}
 	return password;
 }
