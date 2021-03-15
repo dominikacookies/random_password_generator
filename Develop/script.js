@@ -11,7 +11,7 @@ function generatePassword() {
 	let lowercaseChoice = false;
 	let numericChoice = false;
 	let specialChoice = false;
-	let concatArray = [];
+	let concArray = [];
 	let passwordArray = [];
 
 	// Password length declared by user
@@ -75,14 +75,14 @@ function generatePassword() {
 			passwordArray.push(specialArray[randomIndex]);
 			lengthChoice -= 1;
 		}
-
-	console.log (lengthChoice)
-
+		// All good until here
 		
+		concanateArrays ()
+
 		// Required criteria arrays are joined into a single array
-		const concArray = function concArrays () { 
+		function concanateArrays () { 
 			if (uppercaseChoice) {
-				concArray = concArray.concat(upperCaseArray);
+				concArray = concArray.concat(uppercaseArray);
 			}
 
 			if (lowercaseChoice) {
@@ -102,9 +102,14 @@ function generatePassword() {
 
 		// A for loop is used to generate a password from the single array
 		for (var i = 0; i < lengthChoice; i++) {
-			let password = concArray[Math.floor(Math.random() * concArray.length)];
+			const randomIndex = Math.floor(Math.random() * concArray.length);
+			passwordArray.push(concArray[randomIndex]);
 		}
 	}
+
+	console.log (passwordArray)
+
+	return password;
 }
 
 
