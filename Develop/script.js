@@ -12,9 +12,10 @@ function generatePassword() {
 	let numericChoice = false;
 	let specialChoice = false;
 	let concatArray = [];
+	let passwordArray = [];
 
 	// Password length declared by user
-	const lengthChoice = prompt("How long would you like your password to be?");
+	let lengthChoice = prompt("How long would you like your password to be?");
 
 	// Password length input is validated
 	validateLengthChoice ();
@@ -49,6 +50,35 @@ function generatePassword() {
 
 	// New password is generated
 	function generate (uppercaseChoice,lowercaseChoice,numericChoice,specialChoice) {
+		
+		// Push one character from chosen criteria to the final password array
+		if (uppercaseChoice) {
+			const randomIndex = Math.floor(Math.random() * uppercaseArray.length);
+			passwordArray.push(uppercaseArray[randomIndex]);
+			lengthChoice -= 1;
+		}
+		
+		if (lowercaseChoice) {
+			const randomIndex = Math.floor(Math.random() * lowercaseArray.length);
+			passwordArray.push(lowercaseArray[randomIndex]);
+			lengthChoice -= 1;
+		}
+
+		if (numericChoice) {
+		const randomIndex = Math.floor(Math.random() * numericArray.length);
+    passwordArray.push(numericArray[randomIndex]);
+    lengthChoice -= 1;
+		}
+
+		if (specialChoice) {
+			const randomIndex = Math.floor(Math.random() * specialArray.length);
+			passwordArray.push(specialArray[randomIndex]);
+			lengthChoice -= 1;
+		}
+
+	console.log (lengthChoice)
+
+		
 		// Required criteria arrays are joined into a single array
 		const concArray = function concArrays () { 
 			if (uppercaseChoice) {
