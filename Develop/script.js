@@ -2,7 +2,7 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
 	// Function variables
-	var password = '';
+	let password = "";
 	
 	let uppercaseChoice = false;
 	let lowercaseChoice = false;
@@ -106,10 +106,8 @@ function generatePassword() {
 			passwordArray.push(concArray[randomIndex]);
 		}
 
-		console.log (passwordArray)
-
-		password = passwordArray;
-
+		password = passwordArray.toString ();
+	
 		return password;
 	}
 }
