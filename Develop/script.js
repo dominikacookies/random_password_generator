@@ -3,14 +3,17 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
 	// Function variables
 	var password = '';
-	const uppercaseArray = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",];
-	const lowercaseArray = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
-	const numericArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,];
-	const specialArray =  ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", ".",];
+	
 	let uppercaseChoice = false;
 	let lowercaseChoice = false;
 	let numericChoice = false;
 	let specialChoice = false;
+
+	const uppercaseArray = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",];
+	const lowercaseArray = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
+	const numericArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,];
+	const specialArray =  ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", ".",];
+
 	let concArray = [];
 	let passwordArray = [];
 
@@ -75,7 +78,6 @@ function generatePassword() {
 			passwordArray.push(specialArray[randomIndex]);
 			lengthChoice -= 1;
 		}
-		// All good until here
 		
 		concanateArrays ()
 
@@ -98,18 +100,18 @@ function generatePassword() {
 			}
 		}
 
-		console.log (concArray)
-
 		// A for loop is used to generate a password from the single array
 		for (var i = 0; i < lengthChoice; i++) {
 			const randomIndex = Math.floor(Math.random() * concArray.length);
 			passwordArray.push(concArray[randomIndex]);
 		}
+
+		console.log (passwordArray)
+
+		password = passwordArray;
+
+		return password;
 	}
-
-	console.log (passwordArray)
-
-	return password;
 }
 
 
