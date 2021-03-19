@@ -2,7 +2,7 @@
 
 ## Project Link
 
-You can view the project on GitHub pages by clicking [here](https://dominikacookies.github.io/homework_07032021//).
+You can view the project on GitHub pages by clicking [here](https://dominikacookies.github.io/random_password_generator/).
 
 ## Description
 
