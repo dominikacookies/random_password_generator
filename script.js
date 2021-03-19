@@ -31,7 +31,7 @@ function generatePassword() {
 	function validateLengthChoice () {
 		// Password cannot be shorter than 8 or more than 128 characters. Th password must be a number.
 		if ( !lengthChoice || isNaN(lengthChoice) ) {
-    	alert("Please enter the password length you would like using numerical values only.");
+			alert("Please enter the password length you would like using numerical values only.");
 		} else if ( lengthChoice > 128 || lengthChoice < 8) { 
 			alert("Please enter a password length that's more than 8 and less than 128 characters.");
 		} else { criteriaChoice ()
@@ -74,8 +74,8 @@ function generatePassword() {
 
 		if (numericChoice) {
 		const randomIndex = Math.floor(Math.random() * numericArray.length);
-    passwordArray.push(numericArray[randomIndex]);
-    lengthChoice -= 1;
+		passwordArray.push(numericArray[randomIndex]);
+		lengthChoice -= 1;
 		}
 
 		if (specialChoice) {
@@ -86,7 +86,7 @@ function generatePassword() {
 		
 		concanateArrays ()
 
-		// User chosen criteria arrays are joined into a single array
+		// User's chosen criteria arrays are joined into a single array
 		function concanateArrays () { 
 			if (uppercaseChoice) {
 				concArray = concArray.concat(uppercaseArray);
